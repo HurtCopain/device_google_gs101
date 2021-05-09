@@ -14,6 +14,9 @@ AB_OTA_PARTITIONS += \
 AB_OTA_PARTITIONS += \
     vbmeta_vendor
 
+# AVB flags
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
+
 # Enable chain partition for vendor.
 BOARD_AVB_VBMETA_VENDOR := vendor
 BOARD_AVB_VBMETA_VENDOR_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
