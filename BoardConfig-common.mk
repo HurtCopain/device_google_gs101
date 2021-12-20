@@ -357,13 +357,7 @@ WIFI_AVOID_IFACE_RESET_MAC_CHANGE := true
 WIFI_FEATURE_HOSTAPD_11AX := true
 
 # NeuralNetworks
-GPU_SOURCE_PRESENT := $(wildcard vendor/arm/mali/valhall)
-GPU_PREBUILD_PRESENT := $(wildcard vendor/google_devices/gs101/prebuilts/gpu/libs)
-ifneq "$(or $(GPU_SOURCE_PRESENT),$(GPU_PREBUILD_PRESENT))" ""
 ARMNN_COMPUTE_CL_ENABLE := 1
-else
-ARMNN_COMPUTE_CL_ENABLE := 0
-endif
 ARMNN_COMPUTE_NEON_ENABLE := 1
 
 # Boot.img
