@@ -1,14 +1,14 @@
 [
   {
-    "repository": "android_vendor_google_interfaces",
+    "repository": "vendor_google_interfaces",
     "target_path": "vendor/google/interfaces"
   },
   {
-    "repository": "android_device_google_gs101-sepolicy",
+    "repository": "device_google_gs101-sepolicy",
     "target_path": "device/google/gs101-sepolicy"
   },
   {
-    "repository": "StatiXOS/android_vendor_google_pixelparts",
+    "repository": "vendor_google_pixelparts",
     "target_path": "vendor/google/pixelparts",
     "remote": "gitlab"
   }
