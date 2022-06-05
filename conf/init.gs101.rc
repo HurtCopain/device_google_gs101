@@ -855,6 +855,18 @@ on post-fs-data
     mkdir /data/vendor/powerstats 0771 system system
     chown system system /data/vendor/powerstats
 
+# Radioactive Kernel custom settings
+on post-fs-data
+    write /sys/module/damon_reclaim/parameters/enabled N
+    write /sys/module/damon_reclaim/parameters/min_age 30000000
+    write /sys/module/damon_reclaim/parameters/quota_sz 1000000000
+    write /sys/module/damon_reclaim/parameters/quota_reset_interval_ms 1000
+    write /sys/module/damon_reclaim/parameters/wmarks_high 500
+    write /sys/module/damon_reclaim/parameters/wmarks_mid 400
+    write /sys/module/damon_reclaim/parameters/wmarks_low 200 
+    write /sys/module/trusty_core/parameters/use_high_wq Y
+    write /sys/module/trusty_virtio/parameters/use_high_wq Y
+
 on property:vendor.thermal.link_ready=1
     # BCL
     write /dev/thermal/tz-by-name/smpl_gm/policy user_space
