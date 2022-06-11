@@ -287,4 +287,7 @@ as/com.google.android.apps.miphone.aiai.app.AiAiContentSuggestionsService</strin
     <string name="config_defaultGallery" translatable="false">com.google.android.apps.photos</string>
     <string name="config_defaultSms" translatable="false">com.google.android.apps.messaging</string>
     <string name="config_systemSpeechRecognizer" translatable="false">com.google.android.tts</string>
+    
+    <!-- Path to fast charging status file to detect whether an oem fast charger is active -->
+    <string name="config_oemFastChargerStatusPath" translatable="false">/sys/class/power_supply/battery/fastchg_status</string>
 </resources>
