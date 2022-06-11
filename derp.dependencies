@@ -1,14 +1,18 @@
 [
   {
-    "repository": "android_vendor_google_interfaces",
+    "repository": "HurtCopain/vendor_google_interfaces",
     "target_path": "vendor/google/interfaces"
   },
   {
-    "repository": "android_device_google_gs101-sepolicy",
+    "repository": "HurtCopain/vendor_pixel-framework",
+    "target_path": "vendor/pixel-framework"
+  },
+  {
+    "repository": "HurtCopain/device_google_gs101-sepolicy",
     "target_path": "device/google/gs101-sepolicy"
   },
   {
-    "repository": "StatiXOS/android_vendor_google_pixelparts",
+    "repository": "jacks84/vendor_google_pixelparts",
     "target_path": "vendor/google/pixelparts",
     "remote": "gitlab"
   }
