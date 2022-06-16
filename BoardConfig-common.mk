@@ -408,7 +408,6 @@ BOARD_KERNEL_CMDLINE += at24.write_timeout=100
 
 # Enable larger logbuf
 BOARD_KERNEL_CMDLINE += log_buf_len=1024K
-SELINUX_IGNORE_NEVERALLOWS := true
 
 -include device/google/gs101/BoardConfig-derp.mk
 -include vendor/google_devices/gs101/proprietary/BoardConfigVendor.mk
