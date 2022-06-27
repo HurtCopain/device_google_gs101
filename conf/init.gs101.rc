@@ -856,6 +856,34 @@ on post-fs-data
     mkdir /data/vendor/powerstats 0771 system system
     chown system system /data/vendor/powerstats
 
+# Radioactive Kernel custom settings
+on post-fs-data
+    write /sys/module/damon_reclaim/parameters/enabled N
+    write /sys/module/damon_reclaim/parameters/min_age 30000000
+    write /sys/module/damon_reclaim/parameters/quota_sz 1000000000
+    write /sys/module/damon_reclaim/parameters/quota_reset_interval_ms 1000
+    write /sys/module/damon_reclaim/parameters/wmarks_high 500
+    write /sys/module/damon_reclaim/parameters/wmarks_mid 400
+    write /sys/module/damon_reclaim/parameters/wmarks_low 200 
+    write /sys/module/trusty_core/parameters/use_high_wq Y
+    write /sys/module/trusty_virtio/parameters/use_high_wq Y
+    write /proc/sys/net/ipv4/tcp_wmem "262144 524288 8388608"
+    write /sys/devices/system/cpu/cpufreq/policy0/sched_pixel/lcpi_threshold 2
+    write /sys/devices/system/cpu/cpufreq/policy0/sched_pixel/spc_threshold 44
+    write /sys/devices/system/cpu/cpufreq/policy0/sched_pixel/limit_frequency 1197000
+    write /sys/devices/system/cpu/cpufreq/policy4/sched_pixel/lcpi_threshold 4
+    write /sys/devices/system/cpu/cpufreq/policy4/sched_pixel/spc_threshold 25
+    write /sys/devices/system/cpu/cpufreq/policy4/sched_pixel/limit_frequency 1328000
+    write /sys/devices/system/cpu/cpufreq/policy6/sched_pixel/lcpi_threshold 4
+    write /sys/devices/system/cpu/cpufreq/policy6/sched_pixel/spc_threshold 20
+    write /sys/devices/system/cpu/cpufreq/policy6/sched_pixel/limit_frequency 1426000
+    write /sys/kernel/vendor_sched/pmu_poll_time 10
+    write /sys/kernel/vendor_sched/pmu_poll_enable 1
+    write /sys/devices/system/cpu/cpufreq/policy0/sched_pixel/pmu_limit_enable 1
+    write /sys/devices/system/cpu/cpufreq/policy4/sched_pixel/pmu_limit_enable 1
+    write /sys/devices/system/cpu/cpufreq/policy6/sched_pixel/pmu_limit_enable 1
+    write /sys/kernel/vendor_sched/pmu_poll_enable 1
+   
 on property:vendor.thermal.link_ready=1
     # BCL
     write /sys/devices/virtual/pmic/mitigation/clock_ratio/tpu_light_clk_ratio 0xfff041c5
