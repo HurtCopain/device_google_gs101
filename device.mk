@@ -39,14 +39,7 @@ PRODUCT_SOONG_NAMESPACES += \
 	hardware/google/graphics/gs101 \
 	hardware/google/interfaces \
 	hardware/google/pixel \
-	device/google/gs101 \
-	vendor/google/whitechapel/tools \
-	vendor/broadcom/bluetooth \
-	vendor/google/camera \
-	vendor/google/interfaces \
-	vendor/google_devices/common/proprietary/confirmatioui_hal \
-	vendor/google_nos/host/android \
-	vendor/google_nos/test/system-test-harness
+	device/google/gs101
 
 LOCAL_KERNEL := $(TARGET_KERNEL_DIR)/Image.lz4
 
@@ -140,12 +133,6 @@ USE_SWIFTSHADER := false
 
 # HWUI
 TARGET_USES_VULKAN = true
-
-PRODUCT_SOONG_NAMESPACES += \
-	vendor/arm/mali/valhall \
-	vendor/arm/mali/valhall/cl \
-	vendor/arm/mali/valhall/libmali \
-	vendor/arm/mali/valhall/cinstr/production/gpu-hwc-reader
 
 include device/google/gs101/neuralnetwork/neuralnetwork.mk
 
@@ -688,8 +675,6 @@ PRODUCT_COPY_FILES += \
 
 # 1. Codec 2.0
 # exynos service
-PRODUCT_SOONG_NAMESPACES += vendor/samsung_slsi/codec2
-
 PRODUCT_COPY_FILES += \
 	device/google/gs101/media_codecs_performance_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_c2.xml \
 
@@ -967,10 +952,6 @@ PRODUCT_COPY_FILES += \
 	frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
 
 #Audio soong
-PRODUCT_SOONG_NAMESPACES += \
-	vendor/google/whitechapel/audio/hal \
-	vendor/google/whitechapel/audio/interfaces
-
 SOONG_CONFIG_NAMESPACES += aoc_audio_board
 SOONG_CONFIG_aoc_audio_board += \
 	platform
